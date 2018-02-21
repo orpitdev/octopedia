@@ -1,0 +1,8 @@
+{
+  "name": "octopedia",
+  "app_id": "2d792f0c",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
