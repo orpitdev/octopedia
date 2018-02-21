@@ -20,17 +20,17 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      
+      this.music = new Audio();
+      this.music.src = "./assets/audio/music.mp3";
+      this.music.load();
+      this.music.volume = 0.2;
+      this.music.addEventListener('ended', function() {
+          this.currentTime = 0;
+          this.play();
+      }, false);
+      this.music.play();
     });
-
-    this.music = new Audio();
-    this.music.src = "./assets/audio/music.mp3";
-    this.music.load();
-    this.music.volume = 0.2;
-    this.music.addEventListener('ended', function() {
-        this.currentTime = 0;
-        this.play();
-    }, false);
-    this.music.play();
   }
 }
 
