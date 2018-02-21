@@ -87,6 +87,7 @@ export class RandomPage {
   }
 
   ionViewDidEnter() {
+    
     let load = window.localStorage.getItem('load')
 
     //If not true, dont preloading images
