@@ -3,6 +3,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ImageLoaderConfig } from 'ionic-image-loader';
+import { NativeAudio } from '@ionic-native/native-audio';
 
 import { HomePage } from '../pages/home/home';
 
@@ -14,22 +15,18 @@ export class MyApp {
 
   public music
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private imageLoaderConfig: ImageLoaderConfig) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private imageLoaderConfig: ImageLoaderConfig, private nativeAudio: NativeAudio) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-      
-      this.music = new Audio();
-      this.music.src = "./assets/audio/music.mp3";
-      this.music.load();
-      this.music.volume = 0.2;
-      this.music.addEventListener('ended', function() {
-          this.currentTime = 0;
-          this.play();
-      }, false);
-      this.music.play();
+
+      this.nativeAudio.preloadComplex('music', 'assets/audio/music.mp3', 0.2, 1, 0)
+        .then(() => {
+          this.nativeAudio.loop('music')
+        })
+
     });
   }
 }
