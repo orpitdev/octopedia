@@ -21,10 +21,11 @@ export class HomePage {
 
   ionViewDidLoad() { 
     window.localStorage.setItem('load', 'true');
-    this.nativeAudio.preloadSimple('botao', 'assets/audio/botao.mp3')
+    this.nativeAudio.preloadComplex('botao', 'assets/audio/botao.mp3', 1, 1, 0)
   }
 
   goToRandom(){
+    this.nativeAudio.stop('botao')
     this.nativeAudio.play('botao')
     this.navCtrl.push('RandomPage');
   }
