@@ -25,7 +25,7 @@ export class HomePage {
   }
 
   goToRandom(){
-    this.navCtrl.push('RandomPage');
     this.nativeAudio.play('botao')
+    this.navCtrl.push('RandomPage');
   }
 }

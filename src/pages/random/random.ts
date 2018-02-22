@@ -146,13 +146,13 @@ export class RandomPage {
   }
 
   goToRandom(){
-    this.navCtrl.push('RandomPage')
     this.nativeAudio.play('botao_random')
+    this.navCtrl.push('RandomPage')
   }
 
   goToHome(){
-    this.navCtrl.push(HomePage)
     this.nativeAudio.play('botao_random')
+    this.navCtrl.push(HomePage)
   }
   
 }
