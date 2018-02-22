@@ -83,7 +83,7 @@ export class RandomPage {
 
     //Load audio
     this.nativeAudio.preloadComplex('roleta', 'assets/audio/roleta.mp3', 1, 1, 0)
-    this.nativeAudio.preloadSimple('botao', 'assets/audio/botao.mp3')
+    this.nativeAudio.preloadSimple('botao_random', 'assets/audio/botao.mp3')
   }
 
   //Set config on the slides
@@ -147,12 +147,12 @@ export class RandomPage {
 
   goToRandom(){
     this.navCtrl.push('RandomPage')
-    this.nativeAudio.play('botao')
+    this.nativeAudio.play('botao_random')
   }
 
   goToHome(){
     this.navCtrl.push(HomePage)
-    this.nativeAudio.play('botao')
+    this.nativeAudio.play('botao_random')
   }
   
 }
