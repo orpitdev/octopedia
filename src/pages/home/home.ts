@@ -17,19 +17,15 @@ export class HomePage {
       //Lock to portrair
       this.screenOrientation.lock('portrait');
     }
-
-    //Audio on click
-    this.audio = new Audio();
-    this.audio.src = "./assets/audio/botao.mp3";
-    this.audio.load();
   }
 
   ionViewDidLoad() { 
     window.localStorage.setItem('load', 'true');
+    this.nativeAudio.preloadSimple('botao', 'assets/audio/botao.mp3')
   }
 
   goToRandom(){
     this.navCtrl.push('RandomPage');
-    this.audio.play();
+    this.nativeAudio.play('botao')
   }
 }

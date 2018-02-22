@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides, LoadingController } from 'ionic-angular';
+import { NativeAudio } from '@ionic-native/native-audio';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the RandomPage page.
@@ -25,7 +27,7 @@ export class RandomPage {
   public load_time: number = 10000
   public roleta
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, private nativeAudio: NativeAudio) {
     
   }
 
@@ -78,6 +80,10 @@ export class RandomPage {
       let random_timer = this.execution_time
       this.startSlides(random_timer)
     }
+
+    //Load audio
+    this.nativeAudio.preloadComplex('roleta', 'assets/audio/roleta.mp3', 1, 1, 0)
+    this.nativeAudio.preloadSimple('botao', 'assets/audio/botao.mp3')
   }
 
   //Set config on the slides
@@ -87,7 +93,7 @@ export class RandomPage {
   }
 
   ionViewDidEnter() {
-    
+
     let load = window.localStorage.getItem('load')
 
     //If not true, dont preloading images
@@ -98,13 +104,9 @@ export class RandomPage {
   }
 
   startSlides(time){
-
-    this.roleta = new Audio();
-    this.roleta.src = "./assets/audio/roleta.mp3";
-    this.roleta.load();
-    this.roleta.volume = 1;
-    this.roleta.play();
-
+    
+    this.nativeAudio.loop('roleta')
+    
     //Reset timer
     clearInterval(timer)
 
@@ -121,8 +123,7 @@ export class RandomPage {
     setTimeout(() => {
       clearInterval(timer)
       this.showBtnBack = true
-      this.roleta.pause();
-      this.roleta.currentTime = 0;
+      this.nativeAudio.stop('roleta')
     }, time)
   }
 
@@ -145,7 +146,13 @@ export class RandomPage {
   }
 
   goToRandom(){
-    this.navCtrl.push('RandomPage');
+    this.navCtrl.push('RandomPage')
+    this.nativeAudio.play('botao')
+  }
+
+  goToHome(){
+    this.navCtrl.push(HomePage)
+    this.nativeAudio.play('botao')
   }
   
 }

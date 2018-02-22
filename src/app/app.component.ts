@@ -22,10 +22,8 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
 
-      //Check if is device or emulator
       this.nativeAudio.preloadComplex('music', 'assets/audio/music.mp3', 0.2, 1, 0)
         .then(() => {
-          this.nativeAudio.play('music')
           this.nativeAudio.loop('music')
         })
 

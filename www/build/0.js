@@ -45,6 +45,8 @@ var RandomPageModule = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RandomPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_native_audio__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(205);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,6 +58,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 /**
  * Generated class for the RandomPage page.
  *
@@ -63,10 +67,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var RandomPage = (function () {
-    function RandomPage(navCtrl, navParams, loadingCtrl) {
+    function RandomPage(navCtrl, navParams, loadingCtrl, nativeAudio) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.loadingCtrl = loadingCtrl;
+        this.nativeAudio = nativeAudio;
         this.max_time_transition = 100;
         this.execution_time = 5000;
         this.load_time = 10000;
@@ -113,6 +118,9 @@ var RandomPage = (function () {
             var random_timer = this.execution_time;
             this.startSlides(random_timer);
         }
+        //Load audio
+        this.nativeAudio.preloadComplex('roleta', 'assets/audio/roleta.mp3', 1, 1, 0);
+        this.nativeAudio.preloadSimple('botao', 'assets/audio/botao.mp3');
     };
     //Set config on the slides
     RandomPage.prototype.ngAfterViewInit = function () {
@@ -128,11 +136,7 @@ var RandomPage = (function () {
     };
     RandomPage.prototype.startSlides = function (time) {
         var _this = this;
-        this.roleta = new Audio();
-        this.roleta.src = "./assets/audio/roleta.mp3";
-        this.roleta.load();
-        this.roleta.volume = 1;
-        this.roleta.play();
+        this.nativeAudio.loop('roleta');
         //Reset timer
         clearInterval(timer);
         //Start pass slides    
@@ -146,8 +150,7 @@ var RandomPage = (function () {
         setTimeout(function () {
             clearInterval(timer);
             _this.showBtnBack = true;
-            _this.roleta.pause();
-            _this.roleta.currentTime = 0;
+            _this.nativeAudio.stop('roleta');
         }, time);
     };
     RandomPage.prototype.shuffle = function (array) {
@@ -166,18 +169,24 @@ var RandomPage = (function () {
     };
     RandomPage.prototype.goToRandom = function () {
         this.navCtrl.push('RandomPage');
+        this.nativeAudio.play('botao');
+    };
+    RandomPage.prototype.goToHome = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__home_home__["a" /* HomePage */]);
+        this.nativeAudio.play('botao');
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */])
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]) === "function" && _a || Object)
     ], RandomPage.prototype, "slides", void 0);
     RandomPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-random',template:/*ion-inline-start:"E:\Projetos - App\polvo\octopedia\src\pages\random\random.html"*/'<ion-content>\n  <img src="./assets/imgs/logo.png" class="logo" alt="" [ngClass]="showBtnBack ? \'hide-btn-back\' : \'\'">\n  <span class="pulse" (click)="goToRandom()" [ngClass]="showBtnBack ? \'show-btn-back\' : \'\'">\n    <img src="./assets/imgs/btn_play.png" alt="">\n  </span>\n\n  <ion-slides>\n    <ion-slide *ngFor="let image of images" [ngStyle]="{\'background-image\': \'url(./assets/imgs/\'+image+\')\'}"></ion-slide>\n  </ion-slides>\n</ion-content>\n'/*ion-inline-end:"E:\Projetos - App\polvo\octopedia\src\pages\random\random.html"*/,
+            selector: 'page-random',template:/*ion-inline-start:"E:\Projetos - App\polvo\octopedia\src\pages\random\random.html"*/'<ion-content>\n  <img src="./assets/imgs/logo.png" class="logo" alt="" [ngClass]="showBtnBack ? \'hide-btn-back\' : \'\'">\n  <span class="pulse" (click)="goToRandom()" [ngClass]="showBtnBack ? \'show-btn-back\' : \'\'">\n    <img src="./assets/imgs/btn_play.png" alt="">\n  </span>\n  <img src="./assets/imgs/btn_back.png" class="back" alt="" [ngClass]="showBtnBack ? \'show-btn-back\' : \'\'" (click)="goToHome()">\n\n  <ion-slides>\n    <ion-slide *ngFor="let image of images" [ngStyle]="{\'background-image\': \'url(./assets/imgs/\'+image+\')\'}"></ion-slide>\n  </ion-slides>\n</ion-content>\n'/*ion-inline-end:"E:\Projetos - App\polvo\octopedia\src\pages\random\random.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_native_audio__["a" /* NativeAudio */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_native_audio__["a" /* NativeAudio */]) === "function" && _e || Object])
     ], RandomPage);
     return RandomPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=random.js.map
