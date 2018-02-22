@@ -36,11 +36,11 @@ var HomePage = (function () {
     }
     HomePage.prototype.ionViewDidLoad = function () {
         window.localStorage.setItem('load', 'true');
-        this.nativeAudio.preloadComplex('botao', 'assets/audio/botao.mp3', 1, 1, 0);
+        this.nativeAudio.preloadComplex('botao_play', 'assets/audio/botao.mp3', 1, 1, 0);
     };
     HomePage.prototype.goToRandom = function () {
-        this.nativeAudio.stop('botao');
-        this.nativeAudio.play('botao');
+        this.nativeAudio.stop('botao_play');
+        this.nativeAudio.play('botao_play');
         this.navCtrl.push('RandomPage');
     };
     HomePage = __decorate([
