@@ -25779,16 +25779,14 @@ page-random .back {
   position: absolute;
   z-index: 999;
   left: 5%;
-  top: 10px;
+  top: 20px;
   -webkit-transform: translateY(-150px);
   transform: translateY(-150px);
-  -webkit-transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 page-random .back.show-btn-back {
-  -webkit-transform: translateY(10px);
-  transform: translateY(10px);
+  -webkit-transform: translateY(20px);
+  transform: translateY(20px);
 }
 
 page-random .pulse {
