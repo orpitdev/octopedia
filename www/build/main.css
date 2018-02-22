@@ -25779,14 +25779,14 @@ page-random .back {
   position: absolute;
   z-index: 999;
   left: 5%;
-  top: 20px;
+  top: 15px;
   -webkit-transform: translateY(-150px);
   transform: translateY(-150px);
 }
 
 page-random .back.show-btn-back {
-  -webkit-transform: translateY(20px);
-  transform: translateY(20px);
+  -webkit-transform: translateY(15px);
+  transform: translateY(15px);
 }
 
 page-random .pulse {
