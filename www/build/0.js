@@ -120,7 +120,7 @@ var RandomPage = (function () {
         }
         //Load audio
         this.nativeAudio.preloadComplex('roleta', 'assets/audio/roleta.mp3', 1, 1, 0);
-        this.nativeAudio.preloadSimple('botao_random', 'assets/audio/botao.mp3');
+        this.nativeAudio.preloadComplex('botao', 'assets/audio/botao.mp3', 1, 1, 0);
     };
     //Set config on the slides
     RandomPage.prototype.ngAfterViewInit = function () {
@@ -168,11 +168,13 @@ var RandomPage = (function () {
         return array;
     };
     RandomPage.prototype.goToRandom = function () {
-        this.nativeAudio.play('botao_random');
+        this.nativeAudio.stop('botao');
+        this.nativeAudio.play('botao');
         this.navCtrl.push('RandomPage');
     };
     RandomPage.prototype.goToHome = function () {
-        this.nativeAudio.play('botao_random');
+        this.nativeAudio.stop('botao');
+        this.nativeAudio.play('botao');
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__home_home__["a" /* HomePage */]);
     };
     __decorate([
