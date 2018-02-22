@@ -39,8 +39,8 @@ var HomePage = (function () {
         this.nativeAudio.preloadSimple('botao', 'assets/audio/botao.mp3');
     };
     HomePage.prototype.goToRandom = function () {
-        this.navCtrl.push('RandomPage');
         this.nativeAudio.play('botao');
+        this.navCtrl.push('RandomPage');
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({

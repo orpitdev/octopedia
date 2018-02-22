@@ -168,12 +168,12 @@ var RandomPage = (function () {
         return array;
     };
     RandomPage.prototype.goToRandom = function () {
-        this.navCtrl.push('RandomPage');
         this.nativeAudio.play('botao_random');
+        this.navCtrl.push('RandomPage');
     };
     RandomPage.prototype.goToHome = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__home_home__["a" /* HomePage */]);
         this.nativeAudio.play('botao_random');
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__home_home__["a" /* HomePage */]);
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]),
