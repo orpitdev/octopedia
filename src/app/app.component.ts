@@ -26,8 +26,9 @@ export class MyApp {
         .then(() => {
           this.nativeAudio.loop('music')
         })
-
     });
+    window.localStorage.removeItem('muted');
+    window.localStorage.setItem('load', 'true');
   }
 }
 

@@ -1,9 +1,9 @@
 <ion-content>
   <img src="./assets/imgs/logo.png" class="logo" alt="" [ngClass]="showBtnBack ? 'hide-btn-back' : ''">
   <span class="pulse" (click)="goToRandom()" [ngClass]="showBtnBack ? 'show-btn-back' : ''">
-    <img src="./assets/imgs/btn_play.png" alt="">
+    <img src="./assets/imgs/btn_play_again.png" alt="">
   </span>
-  <img src="./assets/imgs/btn_back.png" class="back" alt="" [ngClass]="showBtnBack ? 'show-btn-back' : ''" (click)="goToHome()">
+  <!-- <img src="./assets/imgs/btn_back.png" class="back" alt="" [ngClass]="showBtnBack ? 'show-btn-back' : ''" (click)="goToHome()"> -->
 
   <ion-slides>
     <ion-slide *ngFor="let image of images" [ngStyle]="{'background-image': 'url(./assets/imgs/'+image+')'}"></ion-slide>

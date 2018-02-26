@@ -33,9 +33,9 @@ var HomePage = (function () {
             //Lock to portrair
             this.screenOrientation.lock('portrait');
         }
+        this.mute();
     }
     HomePage.prototype.ionViewDidLoad = function () {
-        window.localStorage.setItem('load', 'true');
         this.nativeAudio.preloadComplex('botao_play', 'assets/audio/botao.mp3', 1, 1, 0);
     };
     HomePage.prototype.goToRandom = function () {
@@ -43,9 +43,38 @@ var HomePage = (function () {
         this.nativeAudio.play('botao_play');
         this.navCtrl.push('RandomPage');
     };
+    HomePage.prototype.mute = function () {
+        var muted_save = window.localStorage.getItem('muted');
+        var first_time = true;
+        if (this.muted == undefined) {
+            if (muted_save != null) {
+                this.muted = muted_save == 'true' ? true : false;
+            }
+            else {
+                this.muted = false;
+            }
+            first_time = true;
+        }
+        else {
+            if (this.muted == false) {
+                this.muted = true;
+            }
+            else {
+                this.muted = false;
+            }
+        }
+        if (this.muted) {
+            this.nativeAudio.stop('music');
+            window.localStorage.setItem('muted', 'true');
+        }
+        else {
+            this.nativeAudio.loop('music');
+            window.localStorage.setItem('muted', 'false');
+        }
+    };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"E:\Projetos - App\polvo\octopedia\src\pages\home\home.html"*/'<ion-content class="home">\n  <img src="./assets/imgs/logo.png" class="logo" alt="">\n  <span class="pulse" (click)="goToRandom()">\n    <img src="./assets/imgs/btn_play.png" alt="">\n  </span>\n</ion-content>\n'/*ion-inline-end:"E:\Projetos - App\polvo\octopedia\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"E:\Projetos - App\polvo\octopedia\src\pages\home\home.html"*/'<ion-content class="home">\n  <img src="./assets/imgs/logo.png" class="logo" alt="">\n  <span class="pulse" (click)="goToRandom()">\n    <img src="./assets/imgs/btn_play.png" alt="">\n  </span>\n  <span class="mute" (click)="mute()">\n    <ion-icon name="volume-off" *ngIf="muted"></ion-icon>\n    <ion-icon name="volume-up" *ngIf="!muted"></ion-icon>\n  </span>\n</ion-content>\n'/*ion-inline-end:"E:\Projetos - App\polvo\octopedia\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_screen_orientation__["a" /* ScreenOrientation */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_audio__["a" /* NativeAudio */]])
     ], HomePage);
@@ -226,6 +255,8 @@ var MyApp = (function () {
                 _this.nativeAudio.loop('music');
             });
         });
+        window.localStorage.removeItem('muted');
+        window.localStorage.setItem('load', 'true');
     }
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\Projetos - App\polvo\octopedia\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"E:\Projetos - App\polvo\octopedia\src\app\app.html"*/

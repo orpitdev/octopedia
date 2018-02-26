@@ -22,10 +22,12 @@ export class RandomPage {
   @ViewChild(Slides) slides: Slides;
   public showBtnBack: boolean
   public images: Array<string>
-  public max_time_transition: number = 100 
+  public max_time_transition: number = 50 
   public execution_time = 5000
-  public load_time: number = 10000
+  public load_time: number = 5000
   public roleta
+  public time_go_to_home: number = 5000
+  public timeout_go_to_home
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, private nativeAudio: NativeAudio) {
     
@@ -104,11 +106,13 @@ export class RandomPage {
   }
 
   startSlides(time){
-    
+    var timer_go_to_home
+
     this.nativeAudio.loop('roleta')
     
     //Reset timer
     clearInterval(timer)
+    clearTimeout(this.timeout_go_to_home)
 
     //Start pass slides    
     let steps = Math.round(time/this.max_time_transition)
@@ -124,6 +128,9 @@ export class RandomPage {
       clearInterval(timer)
       this.showBtnBack = true
       this.nativeAudio.stop('roleta')
+      this.timeout_go_to_home = setTimeout(() => {
+        this.navCtrl.push(HomePage)
+      }, this.time_go_to_home)
     }, time)
   }
 
@@ -146,6 +153,9 @@ export class RandomPage {
   }
 
   goToRandom(){
+    //Reset timeout if play again
+    clearTimeout(this.timeout_go_to_home)
+
     this.nativeAudio.stop('botao')
     this.nativeAudio.play('botao')
     this.navCtrl.push('RandomPage')
