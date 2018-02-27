@@ -96,6 +96,5 @@
         <variable name="MAX_STORE" value="2" />
     </plugin>
     <plugin name="cordova-plugin-nativeaudio" spec="^3.0.9" />
-    <engine name="android" spec="~7.0.0" />
     <engine name="ios" spec="~4.5.4" />
 </widget>
