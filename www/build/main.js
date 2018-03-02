@@ -74,7 +74,7 @@ var HomePage = (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"E:\Projetos - App\polvo\octopedia\src\pages\home\home.html"*/'<ion-content class="home">\n  <img src="./assets/imgs/logo.png" class="logo" alt="">\n  <span class="pulse" (click)="goToRandom()">\n    <img src="./assets/imgs/btn_play.png" alt="">\n  </span>\n  <span class="mute" (click)="mute()">\n    <ion-icon name="volume-off" *ngIf="muted"></ion-icon>\n    <ion-icon name="volume-up" *ngIf="!muted"></ion-icon>\n  </span>\n</ion-content>\n'/*ion-inline-end:"E:\Projetos - App\polvo\octopedia\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/vagrant/polvo/octopedia/src/pages/home/home.html"*/'<ion-content class="home">\n  <img src="./assets/imgs/logo.png" class="logo" alt="">\n  <span class="pulse" (click)="goToRandom()">\n    <img src="./assets/imgs/btn_play.png" alt="">\n  </span>\n  <span class="mute" (click)="mute()">\n    <ion-icon name="volume-off" *ngIf="muted"></ion-icon>\n    <ion-icon name="volume-up" *ngIf="!muted"></ion-icon>\n  </span>\n</ion-content>\n'/*ion-inline-end:"/vagrant/polvo/octopedia/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_screen_orientation__["a" /* ScreenOrientation */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_audio__["a" /* NativeAudio */]])
     ], HomePage);
@@ -259,7 +259,7 @@ var MyApp = (function () {
         window.localStorage.setItem('load', 'true');
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\Projetos - App\polvo\octopedia\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"E:\Projetos - App\polvo\octopedia\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/vagrant/polvo/octopedia/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/vagrant/polvo/octopedia/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_4_ionic_image_loader__["a" /* ImageLoaderConfig */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_native_audio__["a" /* NativeAudio */]])
     ], MyApp);

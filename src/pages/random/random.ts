@@ -20,6 +20,7 @@ import { HomePage } from '../home/home';
 export class RandomPage {
 
   @ViewChild(Slides) slides: Slides;
+  
   public showBtnBack: boolean
   public images: Array<string>
   public max_time_transition: number = 50 
