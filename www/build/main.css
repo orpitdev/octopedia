@@ -25678,6 +25678,16 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-curiosity {
+  background-image: url("./../assets/imgs/bg_intern.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+page-curiosity .content-md, page-curiosity .content-ios {
+  background-color: transparent;
+}
+
 page-home .home {
   background-image: url("./../assets/imgs/bg_home.gif");
   background-size: 101% 101%;
@@ -25752,7 +25762,7 @@ page-home .pulse:active {
   }
 }
 
-page-home .mute {
+page-home .mute, page-home .curiosity, page-home .link-site {
   display: block;
   width: 40px;
   height: 40px;
@@ -25771,14 +25781,62 @@ page-home .mute {
   padding-top: 5px;
 }
 
-page-home .mute ion-icon {
+page-home .mute ion-icon, page-home .curiosity ion-icon, page-home .link-site ion-icon {
   font-size: 25px;
   color: #ffd607;
 }
 
-page-home .mute:active {
+page-home .mute:active, page-home .curiosity:active, page-home .link-site:active {
   background: #ff6b02;
   background: radial-gradient(ellipse at center, #ff6b02 0%, #fff608 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6b02', endColorstr='#fff608', GradientType=1 );
+}
+
+page-home .curiosity {
+  -webkit-box-shadow: 0px 0px 25px 0px #ffd607;
+  box-shadow: 0px 0px 25px 0px #ffd607;
+  width: 60px;
+  height: 60px;
+  left: 20px;
+  top: initial;
+  bottom: 45px;
+  margin-left: 0;
+  border: 3px solid #ffd607;
+  background: #ffd607;
+}
+
+page-home .curiosity ion-icon {
+  font-size: 40px;
+  color: #ff6b02;
+}
+
+page-home .curiosity:active {
+  background: #fff608;
+  background: radial-gradient(ellipse at center, #fff608 0%, #ff6b02 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6b02', endColorstr='#fff608', GradientType=1 );
+}
+
+page-home .link-site {
+  -webkit-box-shadow: 0px 0px 25px 0px #ffd607;
+  box-shadow: 0px 0px 25px 0px #ffd607;
+  width: 40px;
+  height: 40px;
+  left: 75px;
+  top: initial;
+  bottom: 45px;
+  margin-left: 0;
+  border: 3px solid #ffd607;
+  background: #ffd607;
+}
+
+page-home .link-site ion-icon {
+  font-size: 25px;
+  color: #ff6b02;
+}
+
+page-home .link-site:active {
+  background: #fff608;
+  background: radial-gradient(ellipse at center, #fff608 0%, #ff6b02 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6b02', endColorstr='#fff608', GradientType=1 );
 }
 

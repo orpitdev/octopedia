@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { NativeAudio } from '@ionic-native/native-audio';
+import { CuriosityPage } from '../curiosity/curiosity';
 
 @Component({
   selector: 'page-home',
@@ -73,5 +74,13 @@ export class HomePage {
       window.localStorage.setItem('muted', 'false')
     }
     
+  }
+
+  goToCuriosity(){
+    this.navCtrl.push(CuriosityPage)
+  }
+
+  goToSite(){
+    window.location.href = 'http://www.paisefilhos.ind.br/'
   }
 }

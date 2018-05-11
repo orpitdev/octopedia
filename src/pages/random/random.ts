@@ -106,7 +106,6 @@ export class RandomPage {
   }
 
   startSlides(time){
-    var timer_go_to_home
 
     this.nativeAudio.loop('roleta')
     

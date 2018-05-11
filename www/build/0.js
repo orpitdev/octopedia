@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 289:
+/***/ 291:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RandomPageModule", function() { return RandomPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__random__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__random__ = __webpack_require__(292);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,15 +38,15 @@ var RandomPageModule = (function () {
 
 /***/ }),
 
-/***/ 290:
+/***/ 292:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RandomPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_native_audio__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(104);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -137,7 +137,6 @@ var RandomPage = (function () {
     };
     RandomPage.prototype.startSlides = function (time) {
         var _this = this;
-        var timer_go_to_home;
         this.nativeAudio.loop('roleta');
         //Reset timer
         clearInterval(timer);
@@ -191,7 +190,7 @@ var RandomPage = (function () {
     ], RandomPage.prototype, "slides", void 0);
     RandomPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-random',template:/*ion-inline-start:"/Users/marcogarcia/Documents/App/octopedia/src/pages/random/random.html"*/'<ion-content>\n  <img src="./assets/imgs/logo.png" class="logo" alt="" [ngClass]="showBtnBack ? \'hide-btn-back\' : \'\'">\n  <span class="pulse" (click)="goToRandom()" [ngClass]="showBtnBack ? \'show-btn-back\' : \'\'">\n    <img src="./assets/imgs/btn_play_again.png" alt="">\n  </span>\n  <!-- <img src="./assets/imgs/btn_back.png" class="back" alt="" [ngClass]="showBtnBack ? \'show-btn-back\' : \'\'" (click)="goToHome()"> -->\n\n  <ion-slides>\n    <ion-slide *ngFor="let image of images" [ngStyle]="{\'background-image\': \'url(./assets/imgs/\'+image+\')\'}"></ion-slide>\n  </ion-slides>\n</ion-content>\n'/*ion-inline-end:"/Users/marcogarcia/Documents/App/octopedia/src/pages/random/random.html"*/,
+            selector: 'page-random',template:/*ion-inline-start:"/Users/desenvolvimento-orpit/Desktop/App/octopedia/src/pages/random/random.html"*/'<ion-content>\n  <img src="./assets/imgs/logo.png" class="logo" alt="" [ngClass]="showBtnBack ? \'hide-btn-back\' : \'\'">\n  <span class="pulse" (click)="goToRandom()" [ngClass]="showBtnBack ? \'show-btn-back\' : \'\'">\n    <img src="./assets/imgs/btn_play_again.png" alt="">\n  </span>\n  <!-- <img src="./assets/imgs/btn_back.png" class="back" alt="" [ngClass]="showBtnBack ? \'show-btn-back\' : \'\'" (click)="goToHome()"> -->\n\n  <ion-slides>\n    <ion-slide *ngFor="let image of images" [ngStyle]="{\'background-image\': \'url(./assets/imgs/\'+image+\')\'}"></ion-slide>\n  </ion-slides>\n</ion-content>\n'/*ion-inline-end:"/Users/desenvolvimento-orpit/Desktop/App/octopedia/src/pages/random/random.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_native_audio__["a" /* NativeAudio */]])
     ], RandomPage);

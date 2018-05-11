@@ -1,4 +1,4 @@
-<ion-content class="home">
+<ion-content class="home" no-bounce>
   <img src="./assets/imgs/logo.png" class="logo" alt="">
   <span class="pulse" (click)="goToRandom()">
     <img src="./assets/imgs/btn_play.png" alt="">
@@ -6,5 +6,11 @@
   <span class="mute" (click)="mute()">
     <ion-icon name="volume-off" *ngIf="muted"></ion-icon>
     <ion-icon name="volume-up" *ngIf="!muted"></ion-icon>
+  </span>
+  <span class="curiosity" (click)="goToCuriosity()">
+    <ion-icon ios="ios-bulb" md="ios-bulb"></ion-icon>
+  </span>
+  <span class="link-site" (click)="goToSite()">
+    <ion-icon name="information-circle"></ion-icon>
   </span>
 </ion-content>

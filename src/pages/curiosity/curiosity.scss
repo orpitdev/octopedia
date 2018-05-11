@@ -1,0 +1,9 @@
+page-curiosity {
+    background-image: url('./../assets/imgs/bg_intern.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .content-md, .content-ios{
+        background-color: transparent;
+    }
+}
