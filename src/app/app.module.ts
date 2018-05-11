@@ -9,11 +9,13 @@ import { NativeAudio } from '@ionic-native/native-audio';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { CuriosityPage } from '../pages/curiosity/curiosity';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    CuriosityPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    CuriosityPage
   ],
   providers: [
     StatusBar,

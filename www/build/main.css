@@ -25678,6 +25678,16 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-curiosity {
+  background-image: url("./../assets/imgs/bg_intern.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+page-curiosity .content-md, page-curiosity .content-ios {
+  background-color: transparent;
+}
+
 page-home .home {
   background-image: url("./../assets/imgs/bg_home.gif");
   background-size: 101% 101%;
@@ -25705,7 +25715,7 @@ page-home .pulse {
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-left: -60px;
+  margin-left: 0;
   margin-top: -60px;
   border: 3px solid #ff6b02;
   text-align: center;
@@ -25750,6 +25760,84 @@ page-home .pulse:active {
     -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
     box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
   }
+}
+
+page-home .mute, page-home .curiosity, page-home .link-site {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 0 rgba(255, 246, 8, 0.75);
+  box-shadow: 0 0 0 rgba(255, 246, 8, 0.75);
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  margin-left: 60px;
+  margin-top: 0;
+  border: 3px solid #ff6b02;
+  text-align: center;
+  background: #ff6b02;
+  padding-top: 5px;
+}
+
+page-home .mute ion-icon, page-home .curiosity ion-icon, page-home .link-site ion-icon {
+  font-size: 25px;
+  color: #ffd607;
+}
+
+page-home .mute:active, page-home .curiosity:active, page-home .link-site:active {
+  background: #ff6b02;
+  background: radial-gradient(ellipse at center, #ff6b02 0%, #fff608 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6b02', endColorstr='#fff608', GradientType=1 );
+}
+
+page-home .curiosity {
+  -webkit-box-shadow: 0px 0px 25px 0px #ffd607;
+  box-shadow: 0px 0px 25px 0px #ffd607;
+  width: 60px;
+  height: 60px;
+  left: 20px;
+  top: initial;
+  bottom: 45px;
+  margin-left: 0;
+  border: 3px solid #ffd607;
+  background: #ffd607;
+}
+
+page-home .curiosity ion-icon {
+  font-size: 40px;
+  color: #ff6b02;
+}
+
+page-home .curiosity:active {
+  background: #fff608;
+  background: radial-gradient(ellipse at center, #fff608 0%, #ff6b02 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6b02', endColorstr='#fff608', GradientType=1 );
+}
+
+page-home .link-site {
+  -webkit-box-shadow: 0px 0px 25px 0px #ffd607;
+  box-shadow: 0px 0px 25px 0px #ffd607;
+  width: 40px;
+  height: 40px;
+  left: 75px;
+  top: initial;
+  bottom: 45px;
+  margin-left: 0;
+  border: 3px solid #ffd607;
+  background: #ffd607;
+}
+
+page-home .link-site ion-icon {
+  font-size: 25px;
+  color: #ff6b02;
+}
+
+page-home .link-site:active {
+  background: #fff608;
+  background: radial-gradient(ellipse at center, #fff608 0%, #ff6b02 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6b02', endColorstr='#fff608', GradientType=1 );
 }
 
 page-random .logo {
@@ -25806,7 +25894,7 @@ page-random .pulse {
   margin-left: -50px;
   border: 3px solid #ff6b02;
   text-align: center;
-  padding-top: 33px;
+  padding-top: 28px;
   background: #fff608;
   background: radial-gradient(ellipse at center, #fff608 0%, #ff6b02 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff608', endColorstr='#ff6b02', GradientType=1 );
