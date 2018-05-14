@@ -25688,6 +25688,63 @@ page-curiosity .content-md, page-curiosity .content-ios {
   background-color: transparent;
 }
 
+page-curiosity .toolbar-background-md, page-curiosity .toolbar-background-ios {
+  border: 0;
+  background: transparent;
+}
+
+page-curiosity .header-md::after, page-curiosity .header-ios::after {
+  background: transparent;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  display: none;
+}
+
+page-curiosity .bar-button {
+  color: #fff;
+}
+
+page-curiosity .scroll-content {
+  margin-top: 135px !important;
+}
+
+page-curiosity .scroll-content * {
+  color: #fff;
+}
+
+page-curiosity .scroll-content h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 20px;
+}
+
+page-curiosity .scroll-content h1 small {
+  font-size: 0.6em;
+}
+
+page-curiosity .scroll-content h1, page-curiosity .scroll-content h1 * {
+  color: #ffd607;
+  text-align: center;
+}
+
+page-curiosity ion-grid {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+page-curiosity .info {
+  padding: 15px;
+}
+
+page-curiosity .info li {
+  margin-bottom: 15px;
+}
+
+page-curiosity .info li img {
+  border-radius: 15px;
+  margin: 10px 0;
+}
+
 page-home .home {
   background-image: url("./../assets/imgs/bg_home.gif");
   background-size: 101% 101%;

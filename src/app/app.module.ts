@@ -19,7 +19,9 @@ import { CuriosityPage } from '../pages/curiosity/curiosity';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      backButtonText: 'Voltar'
+    }),
     IonicImageLoader.forRoot(),
   ],
   bootstrap: [IonicApp],
